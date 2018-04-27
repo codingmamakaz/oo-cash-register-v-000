@@ -25,7 +25,7 @@ class CashRegister
     end
   end
 
-  
+
 
   # def void_last_transaction
   #     #subtracts the last transaction from the total
@@ -36,5 +36,5 @@ class CashRegister
 
 end
 
-cr = CashRegister.new
-cr.add_item("apple", 0.75, 3)
+# cr = CashRegister.new
+# cr.add_item("apple", 0.75, 3)
