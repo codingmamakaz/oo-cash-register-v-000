@@ -2,15 +2,17 @@ require'pry'
 
 class CashRegister
   attr_accessor :total, :discount, :price, :quantity
-  @@all = []
+  attr_reader :items
+
 
   def initialize(discount = 0)
     @total = 0
     @discount = discount
+    @items = []
   end
 
   def add_item(item, price, quantity = 1)
-    @@all << item
+    @items << item
     @total = @total + (price * quantity)
   end
 
@@ -23,9 +25,7 @@ class CashRegister
     end
   end
 
-  def items
-    @@all.flatten
-  end
+  
 
   # def void_last_transaction
   #     #subtracts the last transaction from the total
