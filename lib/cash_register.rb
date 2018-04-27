@@ -14,7 +14,7 @@ class CashRegister
   def add_item(item, price, quantity = 1)
     quantity.times do
        @items << item
-    end   
+    end
     @total = @total + (price * quantity)
   end
 
@@ -29,12 +29,8 @@ class CashRegister
 
   def void_last_transaction
       #subtracts the last transaction from the total
-      self.add_item(title, price, quantity = 1).map do |t,p,q|
-      @total - p[-1]
+
     end
   end
 
 end
-
-# cr = CashRegister.new
-# cr.add_item("apple", 0.75, 3)
