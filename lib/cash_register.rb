@@ -28,11 +28,11 @@ class CashRegister
 
   end
 
-    # def void_last_transaction
-    #   #subtracts the last transaction from the total
-    #   self.add_item(title, price, quantity = 1).map do |t,p,q|
-    #   @total - p[-1]
-    # end
-    # end
+  def void_last_transaction
+      #subtracts the last transaction from the total
+      self.add_item(title, price, quantity = 1).map do |t,p,q|
+      @total - p[-1]
+    end
+  end
 
 end
