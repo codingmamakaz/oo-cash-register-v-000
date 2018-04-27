@@ -1,7 +1,7 @@
 require'pry'
 
 class CashRegister
-  attr_accessor :total, :discount, :price, :quantity
+  attr_accessor :total, :discount, :price, :quantity, :last_transaction
   attr_reader :items
 
 
@@ -16,6 +16,7 @@ class CashRegister
        @items << item
     end
     @total = @total + (price * quantity)
+    @last_transaction = price * quantity
   end
 
   def apply_discount
@@ -29,8 +30,7 @@ class CashRegister
 
   def void_last_transaction
       #subtracts the last transaction from the total
-
-    end
+      @total = @total - @last_transaction
   end
 
 end
